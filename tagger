@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# A script to change id3 tags of mp3 files using eyeD3 commandline tool.
+# Copyright 2013, 2014 Mohammed Sadik P. K. <sadiqpkp[at]gmail[d0t]com>
+# http://www.sadiqpk.org
+# You may copy, modify and (re)distribute this file under GNU GPL v3 or later.
+
+# The script has to copied to the parent directory of the songs. or change 
+# the home variable below accordingly.
+home="$(pwd)"
+
+folders=$(find . -type d )
+for folder in $folders
+do
+    cd "$folder"
+
+    # Covert all white spaces in file name to underscores. BEWARE, if you already uses underscores.
+    # This is to reduce chances for errors because white space is used to separate arguments in scripts.
+    rename 's/\ /_/g' *
+    
+    # Finding only mp3 files (not Mp3, MP3 etc). Sorry, I know, it is bad for freedom, but no way... :-(
+    # I shall once try to convert each file to a good free format like vorbis ogg to have a happy life :-)
+    for file in `ls *.mp3`
+    do 
+	# To convert id3 tag to version 2.4, because 2.3 doesn't support utf8.
+	eyeD3 --to-v2.4 "$file"
+
+	# Removing all comments already present.
+	eyeD3 --remove-comments "$file"
+
+	# My lovely comment ;-), Its in Malayalam (A language at India, Kerala), Change it yourself.
+	eyeD3 --set-encoding=utf8 --comment ::'മുഹമ്മദ് സാദിഖിന്റെ ശേഖരത്തില്‍ നിന്നും... On Debian GNU/Linux' "$file"	
+
+	# Just for Debugging purposes
+	echo "$file $folder"
+
+    done
+    
+    # Converting underscores back to white spaces
+    rename 's/_/\ /g' *
+
+    cd "$home"
+done
+
+
