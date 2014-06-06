@@ -1,0 +1,15 @@
+tagger --- A script to tag mp3 files
+
+
+Copyright (c) 2014 Mohammed Sadiq <sadiq@sadiqpk.org>
+
+tagger is a small script that shall allow you to
+modify comments in mp3 ID tags. The script allows you
+to modify files recursively.
+
+
+Known bugs
+==========
+
+* Replaces `_' with space in file names.
+* Doesn't works with directories having space in directory name.
