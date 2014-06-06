@@ -11,5 +11,5 @@ to modify files recursively.
 Known bugs
 ==========
 
-* Replaces `_' with space in filenames
-* Doesn't works with directories having space in filename.
+* Replaces `_' with space in file names.
+* Doesn't works with directories having space in directory name.
