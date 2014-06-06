@@ -1,15 +1,19 @@
-tagger --- A script to tag mp3 files
+Some commenly used snippets. 
+Please see the corresponding README files for more details.
+
+Copyright (c) 2014 Mohammed Sadik P. K. <sadiq@sadiqpk.org>
 
 
-Copyright (c) 2014 Mohammed Sadiq <sadiq@sadiqpk.org>
+This collection of snippets is free software: you can redistribute 
+it and/or modify it under the terms of the GNU General Public 
+License as published by the Free Software Foundation, either 
+version 3 of the License, or (at your option) any later version.
 
-tagger is a small script that shall allow you to
-modify comments in mp3 ID tags. The script allows you
-to modify files recursively.
+This collection of snippets is distributed in the hope that it will 
+be useful, but WITHOUT ANY WARRANTY; without even the implied warranty 
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
+You should have received a copy of the GNU General Public License
+along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 
-Known bugs
-==========
-
-* Replaces `_' with space in file names.
-* Doesn't works with directories having space in directory name.
