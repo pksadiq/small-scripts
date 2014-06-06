@@ -7,6 +7,11 @@ tagger is a small script that shall allow you to
 modify comments in mp3 ID tags. The script allows you
 to modify files recursively.
 
+Required Packages (Debian/Ubuntu)
+=================
+
+* eyed3
+
 
 Known bugs
 ==========
